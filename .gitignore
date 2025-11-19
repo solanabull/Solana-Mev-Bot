@@ -1,2 +1,27 @@
-bak/
-releases/
+buy-grpc
+.env
+target
+blacklist.txt
+# Rust build artifacts
+/target
+**/*.rs.bk
+source
+Cargo.lock
+solana-rpc-client-2.1.14
+# IDE files
+.idea/
+.vscode/
+*.iml
+backend
+# Environment files
+.env
+.env.*
+
+# Transaction records
+/record/
+/record/pumpfun/
+/record/pumpswap/
+/record/raydium/
+
+# Logs
+*.log 

@@ -1,2 +1,0 @@
-# Generate password entry thanks to /system/sdcard/bin/createLighttpdPass.sh [LOGIN] [PASS]
-# uncomment authentification section in /config/lighttpd.conf 
