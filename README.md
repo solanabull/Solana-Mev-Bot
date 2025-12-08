@@ -5,10 +5,10 @@ High-performance **Solana sniper bot** written in Rust that monitors wallets and
 **🚀 Ready to automate your Solana trading? 
 
 **Contact:**
-- 📱 **Telegram:** [@insionCEO](https://t.me/insionCEO)
+- 📱 **Telegram:** [@solanabull](https://t.me/solanabull0)
 - 💬 **WhatsApp:** [+1 (838) 273-9959](https://wa.me/18382739959)
 - 📧 **Email:** [amazingrace8190@gmail.com](mailto:amazingrace8190@gmail.com)
-- 🎮 **Discord:** `insionceo0`
+- 🎮 **Discord:** `solanabull0`
 
   
 ## 🔥 Key Features - Ultimate Solana Sniper Bot
@@ -159,6 +159,7 @@ DYNAMIC_TRAILING_STOP_THRESHOLDS=20:5,50:10,100:30
 - Test with small amounts first
 - Ensure compliance with local regulations and DEX terms of service
 - Monitor performance and adjust risk parameters accordingly
+
 
 
 
