@@ -1,27 +1,39 @@
-buy-grpc
-.env
-target
-blacklist.txt
 # Rust build artifacts
-/target
-**/*.rs.bk
-source
+target/
 Cargo.lock
-solana-rpc-client-2.1.14
-# IDE files
-.idea/
-.vscode/
-*.iml
-backend
-# Environment files
-.env
-.env.*
 
-# Transaction records
-/record/
-/record/pumpfun/
-/record/pumpswap/
-/record/raydium/
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.test
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Logs
-*.log 
+logs/
+*.log
+
+# Private keys and wallet files (NEVER commit these!)
+*private*
+*wallet*
+*key*
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Config overrides
+config/local.toml
+config/dev.toml

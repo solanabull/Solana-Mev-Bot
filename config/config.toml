@@ -1,0 +1,118 @@
+# Solana MEV Bot Configuration
+# WARNING: This bot carries significant financial risk. Use at your own risk.
+
+[bot]
+# Bot operational settings
+enabled = true
+name = "solana-mev-bot"
+version = "0.1.0"
+
+[solana]
+# Solana network configuration
+rpc_url = "https://api.mainnet-beta.solana.com"
+ws_url = "wss://api.mainnet-beta.solana.com"
+commitment = "confirmed"
+
+# Wallet configuration (use environment variables for private keys)
+# PRIVATE_KEY must be set as environment variable
+wallet_public_key = ""
+
+[jito]
+# Jito Block Engine configuration
+enabled = true
+block_engine_url = "https://mainnet.block-engine.jito.wtf"
+tip_account = "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU"
+max_tip_lamports = 1000000  # 0.001 SOL max tip
+
+[strategies]
+# Enable/disable strategies
+arbitrage = true
+sandwich = false
+liquidation = false
+
+[arbitrage]
+# Arbitrage strategy settings
+enabled = true
+min_profit_usd = 0.1
+max_slippage_bps = 50  # 0.5%
+max_hops = 3
+supported_dexes = ["raydium", "orca", "openbook"]
+refresh_interval_ms = 1000
+
+[sandwich]
+# Sandwich attack settings (HIGH RISK)
+enabled = false
+min_target_size_usd = 100.0
+max_front_run_bps = 20  # 0.2%
+max_back_run_bps = 30   # 0.3%
+max_slippage_bps = 100  # 1%
+
+[liquidation]
+# Liquidation monitoring settings
+enabled = false
+protocols = ["marginfi", "solend"]
+min_liquidation_profit_usd = 1.0
+max_positions_to_monitor = 1000
+
+[risk_management]
+# Risk controls (MANDATORY)
+max_sol_per_trade = 1.0
+daily_loss_limit_usd = 100.0
+max_consecutive_failures = 5
+auto_disable_on_failures = true
+kill_switch = false
+
+[execution]
+# Transaction execution settings
+compute_unit_limit = 800000
+compute_unit_price_micro_lamports = 20000
+priority_fee_lamports = 10000
+max_retries = 3
+blockhash_refresh_interval_ms = 2000
+
+[simulation]
+# Transaction simulation settings
+enabled = true
+max_simulation_time_ms = 1000
+validate_profit = true
+validate_slippage = true
+validate_compute_units = true
+
+[logging]
+# Logging configuration
+level = "INFO"
+json_format = true
+file_path = "logs/mev-bot.log"
+max_file_size_mb = 100
+max_files = 5
+
+[monitoring]
+# Monitoring and metrics
+enabled = true
+metrics_port = 9090
+alert_webhook_url = ""
+health_check_interval_seconds = 30
+
+[mempool]
+# Mempool monitoring settings
+enabled = true
+subscription_filters = ["logs", "program", "account"]
+dex_programs = [
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8", # Raydium
+    "9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP", # Orca Whirlpool
+    "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX",  # OpenBook
+]
+max_pending_transactions = 10000
+transaction_timeout_seconds = 60
+
+[dex_configs.raydium]
+program_id = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+fee_bps = 25  # 0.25%
+
+[dex_configs.orca]
+program_id = "9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP"
+fee_bps = 30  # 0.30%
+
+[dex_configs.openbook]
+program_id = "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX"
+fee_bps = 40  # 0.40%
