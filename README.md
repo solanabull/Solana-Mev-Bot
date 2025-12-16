@@ -1,6 +1,6 @@
-# Solana MEV Trading Bot
+# Solana MEV Bot
 
-A production-ready MEV (Maximal Extractable Value) trading bot for the Solana blockchain, designed with clean architecture, modular code, and comprehensive risk controls.
+Solana MEV Bot-A production-ready MEV (Maximal Extractable Value) trading bot for the Solana blockchain, designed with clean architecture, modular code, and comprehensive risk controls.
 
 **✅ IMPLEMENTATION COMPLETE**: This codebase includes a fully functional MEV bot with arbitrage, sandwich, and liquidation strategies, real-time mempool monitoring, transaction simulation, and optimized execution through Jito bundles.
 
@@ -375,4 +375,5 @@ MIT License - see LICENSE file for details.
 ---
 
 **Remember: MEV trading is highly competitive and risky. This bot provides the infrastructure, but success depends on market conditions, timing, and risk management.**
+
 
